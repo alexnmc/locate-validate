@@ -16,9 +16,8 @@
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexnmc/locate-validate.git"
+  "engines": {
+    "node": "10.16.0"
   },
   "author": "",
   "license": "ISC",

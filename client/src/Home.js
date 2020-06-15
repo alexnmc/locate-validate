@@ -98,8 +98,8 @@ class Home extends Component {
     deleteImg = () => {
         var answer = window.confirm("Are yousure you want to delete?")
             if(answer){
-                this.props.deletePhoto()
                 this.setState({
+                    img: '',
                     enlargeToggle: false
                 })
             }else{

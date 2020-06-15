@@ -3,7 +3,6 @@ var forceSsl = require('force-ssl-heroku');
 const app = express()
 const morgan = require('morgan')
 const path = require("path")
-const PORT =  8000
 
 
 app.use(forceSsl); // ssl certificate settings
@@ -29,6 +28,6 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running on Port ${PORT} sir!`)
+app.listen(8000, () => {
+    console.log(`Server is running on Port 8000 sir!`)
 })

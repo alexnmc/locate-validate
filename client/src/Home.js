@@ -144,7 +144,7 @@ class Home extends Component {
                         {this.state.toggleHome ? 
                             <div>
                                 <div className = "imgWrap">
-                                    <h1 className = 'cauta'>Enter details:</h1>
+                                    <h1 className = 'cauta'>{this.state.loading === "off" ? "Enter details:" : "Sending ..."}</h1>
                                 </div>
                             </div>
                             : 

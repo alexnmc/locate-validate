@@ -812,6 +812,13 @@ span{
       justify-content: flex-start;
       margin-top: 0pt;
   }
+
+  .alertH1{
+    margin-bottom: 20px;
+    font-family: "arial";
+    color: rgb(19, 32, 56);
+    font-size: 20px;
+  }
   
   
   input{
@@ -948,8 +955,6 @@ span{
       width: 0vw;
       border:0px solid rgb(167, 167, 167);
   }
-
-
 
   .cont2,
   .cont{

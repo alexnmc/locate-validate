@@ -144,7 +144,6 @@ class Home extends Component {
                         {this.state.toggleHome ? 
                             <div>
                                 <div className = "imgWrap">
-                                    <div className = "img1"></div>
                                     <h1 className = 'cauta'>Enter details:</h1>
                                 </div>
                             </div>

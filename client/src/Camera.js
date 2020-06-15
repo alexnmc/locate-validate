@@ -12,7 +12,7 @@ const PhotoCamera = (props) => {
         <Camera
             sizeFactor = {0.4}
             isImageMirror = {true}
-            idealFacingMode = {FACING_MODES.ENVIRONMENT}
+            idealFacingMode = {FACING_MODES.USER}
             onTakePhoto = { (dataUri) => { props.onTakePhoto(dataUri)} }
             onCameraError = { (error) => { onCameraError(error) } }
             isDisplayStartCameraError = {false}

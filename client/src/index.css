@@ -539,7 +539,7 @@ h4{
 .cauta3,
 .cauta{
   font-family: Bevan;
-  color: rgb(11, 178, 219);
+  color: rgb(67, 186, 216);
   font-size: 20pt;
   text-align: center;
   animation: move2 0.7s;
@@ -592,6 +592,13 @@ h4{
   font-size: 13pt;
   text-align: center;
   margin:auto;
+}
+
+.returnImg{
+  font-family: 'arial';
+  color: white;
+  font-size: 13pt;
+  cursor: pointer
 }
 
 .savedPicture{
@@ -1040,6 +1047,10 @@ span{
 
   .savedImg{
       font-size:11pt;
+  }
+
+  .returnImg{
+    font-size: 11pt;
   }
 
   .activH1{

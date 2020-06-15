@@ -4,10 +4,14 @@ const nodemailer = require('nodemailer');
 
 
 mailRouter.post('/', (req, res) => {
-    
+   
   const output = `
           <h4>Date: ${req.body.date}</h4>
-          <h4>Located at: ${req.body.location}</h4>  
+          <h4>Country: ${req.body.location.country}</h4> 
+          <h4>State: ${req.body.location.state}</h4>  
+          <h4>County: ${req.body.location.county}</h4>  
+          <h4>Suburb: ${req.body.location.suburb}</h4> 
+          <h4>Postal code: ${req.body.location.postcode}</h4>     
       `
   
     // create reusable transporter object using the default SMTP transport
@@ -32,7 +36,7 @@ mailRouter.post('/', (req, res) => {
       if (error) {
           res.status(201).send(error)
       } else {
-          res.status(201).send('Email sent: ' + info.response);
+          res.status(201).send('Email sent!');
       }
       })
     })

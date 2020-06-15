@@ -16,9 +16,6 @@ app.use("/mail", require('./routes/mail'))
 
 
 app.use((err, req, res, next) => {
-    if (err.name === "UnauthorizedError") {
-        res.status(err.status); //secret error 
-    }
     return res.send({errMsg: err.message})
 })
 

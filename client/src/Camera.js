@@ -5,13 +5,13 @@ import 'react-html5-camera-photo/build/css/index.css'
 const PhotoCamera = (props) => {
     
     function onCameraError(error){
-        alert('Vã rugãm sã activați camera foto!')
+        alert('Please activate your camera!')
     }
     
     return(
         <Camera
             sizeFactor = {0.4}
-            isImageMirror = {false}
+            isImageMirror = {true}
             idealFacingMode = {FACING_MODES.ENVIRONMENT}
             onTakePhoto = { (dataUri) => { props.onTakePhoto(dataUri)} }
             onCameraError = { (error) => { onCameraError(error) } }

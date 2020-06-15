@@ -63,6 +63,7 @@ class Home extends Component {
         
         if(!this.state.img){
             alert("Please take your photo!")
+            return null
         }
 
         this.setState({

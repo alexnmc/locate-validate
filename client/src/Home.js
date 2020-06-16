@@ -81,7 +81,8 @@ class Home extends Component {
             this.setState({
                 loading: "off"
             })
-            this.alertCallBack(res.data)
+            let response = !res.data.code ? res.data : "Something went wrong, please try again."
+            this.alertCallBack(response)
         }).catch(err => console.log(err))
         this.setState({
             email: '',
@@ -121,13 +122,13 @@ class Home extends Component {
         this.getLocation()
     } 
     
-    alertCallBack = (data) => {
+    alertCallBack = (message) => {
         confirmAlert({
          customUI: ({ onClose }) => {
            return (
              <div className='customAlert'>
-               <h1 className = "alertH1">{data}</h1>
-               <h1 className = "alertH1">Thank you for using Validate!</h1>
+               <h1 className = "alertH1">{message}</h1>
+               {message === "Email sent!" && <h1 className = "alertH1"> "Thank you for using Validate!</h1>}
                <button style = {{marginBottom: "30pt"}} className = 'photoButton' onClick={onClose}>close</button>
              </div>
            )

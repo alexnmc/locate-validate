@@ -25,7 +25,7 @@ mailRouter.post('/', (req, res) => {
   
     // setup email data with unicode symbols
     let mailOptions = {
-        from: 'nemechekalexander@gmail.com', // sender address
+        from: 'valid8location@gmail.com', // sender address
         to: req.body.email, // list of receivers
         subject: "Validated", // Subject line
         html: output, // html body

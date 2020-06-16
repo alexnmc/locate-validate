@@ -30,7 +30,7 @@ class Home extends Component {
             openGeocoder().reverse(position.coords.longitude, position.coords.latitude)
                 .end((err, res) => {       
                         if(err){
-                            alert('Locație necunuscutã !')
+                            alert('Location Unknown !')
                         }  
                         if(res){
                             localStorage.setItem("adress", JSON.stringify(res.address))

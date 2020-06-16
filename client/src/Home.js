@@ -19,11 +19,10 @@ class Home extends Component {
            enlargeToggle: false,
            toggleHome: true,
            toggle: false,
-           loading: 'off'
+           loading: 'off',
         }
     }
 
-    
     getLocation = () => {
         navigator.geolocation.getCurrentPosition(
         function(position) {
@@ -90,7 +89,6 @@ class Home extends Component {
         })
     }
     
-   
     enlargePicture = () => {
         this.setState({
             enlargeToggle: !this.state.enlargeToggle
@@ -111,15 +109,15 @@ class Home extends Component {
             }
     }
 
-
     handleChange = (e) => {
         e.preventDefault()
-        this.getLocation()
+        const location = JSON.parse(localStorage.getItem("adress"))
+        !location && this.getLocation()
         const { name, value } = e.target
         this.setState({
             [name]: value,
         })
-        this.getLocation()
+        console.log(location)
     } 
     
     alertCallBack = (message) => {
@@ -128,16 +126,15 @@ class Home extends Component {
            return (
              <div className='customAlert'>
                <h1 className = "alertH1">{message}</h1>
-               {message === "Email sent!" && <h1 className = "alertH1"> "Thank you for using Validate!</h1>}
+               {message === "Email sent!" && <h1 className = "alertH1">Thank you for using Validate!</h1>}
                <button style = {{marginBottom: "30pt"}} className = 'photoButton' onClick={onClose}>close</button>
              </div>
            )
          }
        })
-     }
+    }
 
 
-    
     render(){
         return(
             <>
@@ -146,7 +143,7 @@ class Home extends Component {
                         {this.state.toggleHome ? 
                             <div>
                                 <div className = "imgWrap">
-                                    <h1 className = 'cauta'>{this.state.loading === "off" ? "Enter details:" : "Sending ..."}</h1>
+                                    <h1 className = 'cauta'>{this.state.loading === "off" ? "Enter details:" : "Sending..."}</h1>
                                 </div>
                             </div>
                             : 
@@ -173,6 +170,7 @@ class Home extends Component {
                                 </div>
                                 
                                 :
+                                
                                 <Loading/>
                                 }
                             </div>
@@ -182,15 +180,19 @@ class Home extends Component {
                             <div className = "cameraWrap"> 
                             {this.state.img ?  
                                 <div className = "savedImgWrap">
-                                    { !this.state.enlargeToggle && this.state.img.length && <h2 className = "savedImg">Saved photo:</h2>}
-                                        <div style = {{display: "block", margin:"auto"}}>
+                                   {!this.state.enlargeToggle && this.state.img.length && <h2 className = "savedImg">Saved photo:</h2>}
+                                    <div style = {{display: "block", margin:"auto"}}>
                                         <div style = {{display: 'flex', alignItems: "center" , justifyContent: 'space-between'}}>
-                                        {this.state.enlargeToggle && <p className = "returnImg" onClick = {() => this.enlargePicture()}>return</p>}
-                                        {this.state.enlargeToggle && <button onClick = {()=> this.deleteImg()}className = 'deletePic'>delete</button>}
+                                            {this.state.enlargeToggle && <p className = "returnImg" onClick = {() => this.enlargePicture()}>return</p>}
+                                            {this.state.enlargeToggle && <button onClick = {()=> this.deleteImg()}className = 'deletePic'>delete</button>}
                                         </div>
-                                        <img className = 'savedPicture' alt = '' src = {this.state.img}  style = {this.state.enlargeToggle ? document.documentElement.clientWidth < 900 ? {width: '85vw' , height: '60vh'} : {width: '300pt' , height: '300pt'} : null} onClick = {() => this.enlargePicture()}/> 
-                                      
-                                      </div>
+                                        <img 
+                                            className = 'savedPicture' 
+                                            alt = '' src = {this.state.img}  
+                                            style = {this.state.enlargeToggle ? document.documentElement.clientWidth < 900 ? {width: '85vw' , height: '60vh'} : {width: '300pt' , height: '300pt'} : null} 
+                                            onClick = {() => this.enlargePicture()}
+                                        /> 
+                                    </div>
                                 </div>
                                 :
                                 null

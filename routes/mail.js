@@ -10,7 +10,6 @@ mailRouter.post('/', (req, res) => {
           <h4>Country: ${req.body.location.country}</h4> 
           <h4>State: ${req.body.location.state}</h4>  
           <h4>County: ${req.body.location.county}</h4>  
-          <h4>Suburb: ${req.body.location.suburb}</h4> 
           <h4>Postal code: ${req.body.location.postcode}</h4>     
       `
   

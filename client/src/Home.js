@@ -117,7 +117,6 @@ class Home extends Component {
         this.setState({
             [name]: value,
         })
-        console.log(location)
     } 
     
     alertCallBack = (message) => {

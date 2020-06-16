@@ -96,7 +96,7 @@ class Home extends Component {
     }
 
     deleteImg = () => {
-        var answer = window.confirm("Are yousure you want to delete?")
+        var answer = window.confirm("Are you sure you want to delete?")
             if(answer){
                 this.setState({
                     img: '',

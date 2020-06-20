@@ -9,7 +9,7 @@ mailRouter.post('/', (req, res) => {
           <h4 style = "color: blue">Date: <span style = "color: rgb(0, 0, 47)">${req.body.date}</<span></h4>
           <h4 style = "color: blue">Country: <span style = "color: rgb(0, 0, 47)">${req.body.location.country}</span></h4> 
           <h4 style = "color: blue">State: <span style = "color: rgb(0, 0, 47)">${req.body.location.state}</span></h4>  
-          <h4 style = "color: blue">County: <span style = "color: rgb(0, 0, 47)">${req.body.location.county}</span></h4>  
+          ${req.body.location.county && <h4 style = "color: blue">County: <span style = "color: rgb(0, 0, 47)">{req.body.location.county}</span></h4>}  
           <h4 style = "color: blue">Postal code: <span style = "color: rgb(0, 0, 47)">${req.body.location.postcode}</span></h4>     
       `
   

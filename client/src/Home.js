@@ -59,7 +59,6 @@ class Home extends Component {
     
     sendEmail = (e) => {
         e.preventDefault()
-        
         if(!this.state.img){
             alert("Please take your photo!")
             return null

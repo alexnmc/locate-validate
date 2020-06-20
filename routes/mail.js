@@ -6,11 +6,11 @@ const nodemailer = require('nodemailer');
 mailRouter.post('/', (req, res) => {
    
   const output = `
-          <h4>Date: ${req.body.date}</h4>
-          <h4>Country: ${req.body.location.country}</h4> 
-          <h4>State: ${req.body.location.state}</h4>  
-          <h4>County: ${req.body.location.county}</h4>  
-          <h4>Postal code: ${req.body.location.postcode}</h4>     
+          <h4 style = "color: blue">Date: <span style = "color: rgb(0, 0, 47)">${req.body.date}</<span></h4>
+          <h4 style = "color: blue">Country: <span style = "color: rgb(0, 0, 47)">${req.body.location.country}</span></h4> 
+          <h4 style = "color: blue">State: <span style = "color: rgb(0, 0, 47)">${req.body.location.state}</span></h4>  
+          <h4 style = "color: blue">County: <span style = "color: rgb(0, 0, 47)">${req.body.location.county}</span></h4>  
+          <h4 style = "color: blue">Postal code: <span style = "color: rgb(0, 0, 47)">${req.body.location.postcode}</span></h4>     
       `
   
     // create reusable transporter object using the default SMTP transport

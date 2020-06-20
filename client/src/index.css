@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+.email1{
+  color: blue
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;

@@ -36,7 +36,7 @@ class Home extends Component {
                             alert('Location Unknown !')
                         }  
                         if(res){
-                            localStorage.setItem("adress", JSON.stringify(res.address))
+                            localStorage.setItem("address", JSON.stringify(res.address))
                         }
                 })
             }
@@ -75,7 +75,7 @@ class Home extends Component {
         const newMail = {
             date: moment(this.state.date).format("LLLL"),
             email: this.state.email,
-            location: JSON.parse(localStorage.getItem("adress")) || {},
+            location: JSON.parse(localStorage.getItem("address")) || {},
             img: this.state.img || '',
         }
        
@@ -216,4 +216,4 @@ class Home extends Component {
 }
 
        
-    export default Home
+export default Home

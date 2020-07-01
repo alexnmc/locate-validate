@@ -23,6 +23,10 @@ class Home extends Component {
         }
     }
 
+    componentDidMount(){
+        this.getLocation()
+    }
+
     getLocation = () => {
         navigator.geolocation.getCurrentPosition(
         function(position) {
@@ -110,8 +114,6 @@ class Home extends Component {
 
     handleChange = (e) => {
         e.preventDefault()
-        const location = JSON.parse(localStorage.getItem("adress"))
-        !location && this.getLocation()
         const { name, value } = e.target
         this.setState({
             [name]: value,

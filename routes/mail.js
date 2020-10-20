@@ -18,7 +18,7 @@ mailRouter.post('/', (req, res) => {
       service: 'gmail',
       auth: {
         user: 'valid8location@gmail.com', 
-        pass: 'Panerai1'  
+        pass: 'Nustiucesascriuaici'  
       }
     })
   
